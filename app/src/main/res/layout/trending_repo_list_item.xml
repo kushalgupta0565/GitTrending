@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/small_padding"
-    app:cardBackgroundColor="@color/colorPrimaryLight"
     app:cardCornerRadius="@dimen/small_margin">
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -4,6 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -28,7 +30,8 @@ class TrendingRepoListAdapter :
         holder.textViewForks.text = data?.forksCount.toString()
 
         holder.itemView.setOnClickListener {
-
+            val bundle = bundleOf("repo_data" to data)
+            it.findNavController().navigate(R.id.action_frag_git_details, bundle)
         }
     }
 

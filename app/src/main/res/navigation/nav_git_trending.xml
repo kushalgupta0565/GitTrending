@@ -2,13 +2,26 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/frag_trending_list"
-    android:id="@+id/nav_git_trending">
+    android:id="@+id/nav_git_trending"
+    app:startDestination="@id/frag_trending_list">
 
     <fragment
         android:id="@+id/frag_trending_list"
         android:name="com.kushal.gittrending.fragments.TrendingListFragment"
         android:label="frag_trending_list"
-        tools:layout="@layout/fragment_trending_list" />
+        tools:layout="@layout/fragment_trending_list">
+        <action
+            android:id="@+id/action_frag_git_details"
+            app:destination="@id/frag_repo_details"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/frag_repo_details"
+        android:name="com.kushal.gittrending.fragments.RepoDetailsFragment"
+        tools:layout="@layout/fragment_repo_details" />
 
 </navigation>
